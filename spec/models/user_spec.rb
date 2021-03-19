@@ -38,8 +38,14 @@ RSpec.describe User, type: :model do
       expect(user.save).to eq false
     end
 
-    it 'ensures the password is atleast 6 character.' do
-      user.password = SecureRandom.hex(3).to_s
+    it 'ensures the password is not more than 25 character.' do
+      user.password = SecureRandom.hex(13).to_s
+      user.password_confirmation = user.password
+      expect(user.save).to eq false
+    end
+
+    it 'saves successfully if password is between 6 - 25 character.' do
+      user.password = SecureRandom.hex(10).to_s
       user.password_confirmation = user.password
       expect(user.save).to eq true
     end
