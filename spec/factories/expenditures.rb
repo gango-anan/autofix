@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :expenditure do
     name { "MyString" }
-    author_id { "" }
     amount { "9.99" }
+    author_id { create(:user).id }
   end
 end
