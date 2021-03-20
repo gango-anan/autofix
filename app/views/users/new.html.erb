@@ -1,0 +1,28 @@
+<h2 class="text-center">Sign Up</h2>
+<%= form_with(model: @user) do |form| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <% @user.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="mb-3 form-group">
+    <%= form.label :username %>
+    <%= form.text_field :username, class: "form-control", placeholder: "Username" %>
+    <small class="form-text text-muted">Your user name must be 4-20 characters long.</small>
+  </div>
+  <div class="mb-3 form-group">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+    <small class="form-text text-muted">Your password must be 6-25 characters long.</small>
+  </div>
+  <div class="mb-3 form-group">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password confirmation" %>
+    <small class="form-text text-muted">Your password must be 6-25 characters long.</small>
+  </div>
+  <div class="mb-3">
+    <%=  form.submit "Sign Up", class: "btn btn-success btn-block" %>
+  </div>
+<% end %>
