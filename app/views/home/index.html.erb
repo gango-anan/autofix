@@ -1,0 +1,11 @@
+<h2>Home Page</h2>
+<div class="container">
+  <% if Current.user %>
+    Logged in as: <%= Current.user.username %> &nbsp; <%= link_to 'Edit Password', password_path %>
+    <%= button_to 'Sign Out', logout_path, method: :delete, class: 'btn btn-outline text-danger' %>
+
+  <% else %>
+    <%= link_to 'Sign In', sign_in_path %> &nbsp;
+    <%= link_to 'Sign Up', new_user_path %>
+  <% end %>
+</div>
