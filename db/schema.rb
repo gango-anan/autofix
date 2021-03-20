@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_151037) do
+ActiveRecord::Schema.define(version: 2021_03_20_184352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2021_03_20_151037) do
     t.index ["name"], name: "index_expenditures_on_name", unique: true
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "user_id"
+    t.bigint "expenditure_id"
+    t.string "icon"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_groups_on_name", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "password_digest", null: false
@@ -34,4 +44,6 @@ ActiveRecord::Schema.define(version: 2021_03_20_151037) do
   end
 
   add_foreign_key "expenditures", "users", column: "author_id"
+  add_foreign_key "groups", "expenditures"
+  add_foreign_key "groups", "users"
 end
