@@ -1,4 +1,6 @@
 class Expenditure < ApplicationRecord
+  default_scope -> { order(:id) }
+  
   validates :name, presence: true
   validates :amount, presence: true
   validates :author_id, presence: true
