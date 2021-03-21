@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_192156) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "group_id"
     t.index ["author_id"], name: "index_expenditures_on_author_id"
-    t.index ["name"], name: "index_expenditures_on_name", unique: true
+    t.index ["name"], name: "index_expenditures_on_name"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_192156) do
     t.string "icon"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_groups_on_name", unique: true
+    t.index ["name"], name: "index_groups_on_name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_192156) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "expenditures", "groups"
   add_foreign_key "expenditures", "users", column: "author_id"
   add_foreign_key "groups", "expenditures"
   add_foreign_key "groups", "users"

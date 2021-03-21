@@ -7,7 +7,7 @@ class CreateExpenditures < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_index :expenditures, :name, unique: true
+    add_index :expenditures, :name
     add_index :expenditures, :author_id
     add_foreign_key :expenditures, :users, column: :author_id
   end
