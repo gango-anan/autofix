@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   get 'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
