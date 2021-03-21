@@ -4,4 +4,5 @@ class Expenditure < ApplicationRecord
   validates :author_id, presence: true
 
   belongs_to :author, class_name: 'User'
+  belongs_to :group, optional: true
 end

@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :password, length: { within: 6..25 }
 
   has_many :expenditures, dependent: :destroy
+  has_many :groups, dependent: :destroy
 end
