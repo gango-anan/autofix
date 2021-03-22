@@ -1,7 +1,6 @@
 class Group < ApplicationRecord
+  default_scope -> { order(:name) }
   validates :name, presence: true
-  default_scope -> { order(:id) }
-  
   belongs_to :user
   has_many :expenditures, dependent: :nullify
 end
