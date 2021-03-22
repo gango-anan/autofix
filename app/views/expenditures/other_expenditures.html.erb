@@ -1,0 +1,12 @@
+<h2 class="text-center">All My External Expenditures</h2>
+<h4>Total Amount: <%= number_to_currency(@total_amount_other_expenditures) %> </h4>
+<%= link_to 'Add new', new_expenditure_path, class: 'btn btn-success' %>
+<ul>
+  <% @other_expenditures.each do |expenditure| %>
+    <li>
+      <%= expenditure.name %> &nbsp; 
+      <%= number_to_currency(expenditure.amount) %> &nbsp; 
+      <%= expenditure.created_at.strftime("%d/%h/%Y") %>
+    </li>
+  <% end %>
+</ul>

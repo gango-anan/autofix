@@ -9,6 +9,16 @@ class ExpendituresController < ApplicationController
     @expenditures = Current.user.expenditures
   end
 
+  def other_expenditures
+    if Current.user.expenditures.un_grouped_expenditures.blank?
+      @total_amount_other_expenditures = 0
+    else
+      @total_amount_other_expenditures = Current.user.total_amount_for_un_grouped_exps
+    end
+
+    @other_expenditures = Current.user.expenditures.un_grouped_expenditures
+  end
+
   def new
     @expenditure = Current.user.expenditures.build
   end
