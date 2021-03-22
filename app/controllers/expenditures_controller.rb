@@ -1,7 +1,12 @@
 class ExpendituresController < ApplicationController
   def index
+    if Current.user.expenditures.blank?
+      @total_amount = 0
+    else
+      @total_amount = Current.user.total_amount
+    end
+
     @expenditures = Current.user.expenditures
-    @total_amount = Current.user.total_amount
   end
 
   def new
@@ -17,7 +22,6 @@ class ExpendituresController < ApplicationController
       render :new
     end
   end
-
 
   private 
 
