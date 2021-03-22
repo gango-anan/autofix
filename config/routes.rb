@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   patch 'password', to: 'passwords#update', as: :edit_password
   resources :groups
   resources :expenditures
+  get 'external_expenditures', to: 'expenditures#other_expenditures'
 end
