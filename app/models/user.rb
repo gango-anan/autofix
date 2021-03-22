@@ -8,8 +8,16 @@ class User < ApplicationRecord
   validates :username, length: { within: 4..20 }
   validates :password, length: { within: 6..25 }
 
-  has_many :expenditures, dependent: :destroy
+  has_many :expenditures, class_name: 'Expenditure', foreign_key: 'author_id'
   has_many :groups, dependent: :destroy
+
+  def total_amount
+    self.expenditures.map{ |expenditure| expenditure.amount }.inject(:+)
+  end
+
+  def total_amount_for_un_grouped_exps
+    self.expenditures.un_grouped_expenditures.map{ |expenditure| expenditure.amount }.inject(:+)
+  end
 
   private
   
