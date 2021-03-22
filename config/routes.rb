@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'password', to: 'passwords#edit'
   patch 'password', to: 'passwords#update', as: :edit_password
   resources :groups
+  resources :expenditures
 end
