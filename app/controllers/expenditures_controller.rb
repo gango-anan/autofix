@@ -24,7 +24,6 @@ class ExpendituresController < ApplicationController
   end
 
   def create
-    expenditure_params.name.downcase!
     @expenditure = Current.user.expenditures.build(expenditure_params)
     if @expenditure.save
       redirect_to expenditures_path, notice: 'Expenditure recorded.'

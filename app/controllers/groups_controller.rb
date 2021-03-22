@@ -8,6 +8,8 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:id])
+    @group_expenditures = Current.user.expenditures.where(group_id: @group.id)
   end
 
   def create

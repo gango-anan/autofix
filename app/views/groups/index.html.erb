@@ -1,6 +1,10 @@
 <h2>All Groups</h2>
-<ul>
+<section class="container">
   <% @groups.each do |group| %>
-    <li><%= group.name %></li>
+    <div>
+      <div>Icon</div>
+      <%= link_to "#{ group.name }", group_path(group.id) %>
+      <%= group.created_at.strftime("%d/%h/%Y") %>
+    </div>
   <% end %>
-</ul>
+</section>

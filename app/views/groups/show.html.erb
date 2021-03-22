@@ -1,0 +1,11 @@
+<%= "#{ Current.user.username } #{ @group.name } Fix Expenditures."  %>
+<br>
+<% @group_expenditures.each do |expenditure| %>
+  <div>
+      <%= expenditure.name %> &nbsp;
+      <%= number_to_currency(expenditure.amount) %> <br/> 
+      <%= expenditure.created_at.strftime("%d/%h/%Y") %> <br/>
+      <%= "Author: #{ expenditure.author.username }" %>
+  </div>
+  <br/>
+<% end %>
