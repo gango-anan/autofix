@@ -1,0 +1,11 @@
+<h2>New Group</h2>
+<%= form_with(model: @group) do |form| %>
+  <div class="mb-3 form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Group name" %>
+  </div>
+  <div class="mb-3">
+    <%=  form.submit "Create Group", class: "btn btn-success btn-block" %>
+  </div>
+  <small class="form-text text-muted">Group name should not contain spaces.</small>
+<% end %>
