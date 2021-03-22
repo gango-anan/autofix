@@ -14,14 +14,14 @@ class User < ApplicationRecord
   private
   
   def create_default_groups
-    Group.create(name: 'Tyre-Clinic', user_id: id)
-    Group.create(name: 'Service', user_id: id)
-    Group.create(name: 'Body', user_id: id)
-    Group.create(name: 'Engine', user_id: id)
-    Group.create(name: 'Diagnostics', user_id: id)
-    Group.create(name: 'Electronics', user_id: id)
-    Group.create(name: 'Brakes', user_id: id)
-    Group.create(name: 'Suspension', user_id: id)
-    Group.create(name: 'Transmission', user_id: id)
+    Group.create(name: 'tyre-clinic', user_id: id)
+    Group.create(name: 'service', user_id: id)
+    Group.create(name: 'body', user_id: id)
+    Group.create(name: 'engine', user_id: id)
+    Group.create(name: 'diagnostics', user_id: id)
+    Group.create(name: 'electronics', user_id: id)
+    Group.create(name: 'brakes', user_id: id)
+    Group.create(name: 'suspension', user_id: id)
+    Group.create(name: 'transmission', user_id: id)
   end
 end

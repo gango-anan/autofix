@@ -4,12 +4,15 @@
     <div><%= link_to "#{ Current.user.username }", password_path %></div>
   </div>
   <div>
-    <%= link_to 'All my Expenditures.', root_path %>
+    <%= link_to 'All my Expenditures', root_path %>
   </div>
   <div>
-    <%= link_to 'All my external Expenditures.', root_path %>
+    <%= link_to 'All my external Expenditures', root_path %>
   </div>
   <div>
-    <%= link_to 'All Groups.', root_path %>
+    <%= link_to 'All Groups', groups_path %>
+  </div>
+    <div>
+    <%= link_to 'Add Group', new_group_path %>
   </div>
 </section>
