@@ -6,7 +6,7 @@
     <li>
       <%= expenditure.name %> &nbsp; 
       <%= number_to_currency(expenditure.amount) %> &nbsp; 
-      <%= expenditure.created_at.strftime("%d/%m/%y") %>
+      <%= expenditure.created_at.strftime("%d/%h/%Y") %>
     </li>
   <% end %>
 </ul>
