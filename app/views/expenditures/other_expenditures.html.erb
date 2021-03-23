@@ -1,12 +1,24 @@
-<h2 class="text-center">All My External Expenditures</h2>
-<h4>Total Amount: <%= number_to_currency(@total_amount_other_expenditures) %> </h4>
-<%= link_to 'Add new', new_expenditure_path, class: 'btn btn-success' %>
-<ul>
-  <% @other_expenditures.each do |expenditure| %>
-    <li>
-      <%= expenditure.name %> &nbsp; 
-      <%= number_to_currency(expenditure.amount) %> &nbsp; 
-      <%= expenditure.created_at.strftime("%d/%h/%Y") %>
-    </li>
-  <% end %>
-</ul>
+<section>
+  <h2 class="h3 text-center text-muted">My External Expenditures</h2>
+  <article class="border bg-white d-flex justify-content-between p-2">
+    <p class="text-muted h6">Total amount</p>
+    <div class="font-weight-bolder"><%= number_to_currency(@total_amount_other_expenditures) %></div>
+  </article>
+  <div class="text-right my-2"><%= link_to "Add new expenditure", new_expenditure_path, class: 'btn btn-success' %></div>
+  <article>
+    <% @other_expenditures.each do |expenditure| %>
+      <div class="d-flex bg-white my-3 pt-2 border shadow">
+        <div class="mx-2 w-25">
+          <%= image_tag "logo.png", class: "logo" %>
+        </div>
+        <div class="w-75 mb-2">
+          <div class="text-muted font-weight-bold"><%= expenditure.name %></div>
+          <div class="font-weight-bolder"><%= number_to_currency(expenditure.amount) %></div>
+          <div class="mb-3">
+            <small><%= expenditure.created_at.strftime("%d/%h/%Y") %></small>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </article>
+</section>
