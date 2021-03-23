@@ -16,7 +16,9 @@
   </head>
 
   <body class="bg-light">
-    <%= render partial: "shared/nav-bar"%>
+    <header>
+      <%= render partial: "shared/nav-bar"%>
+    </header>
     <main class="container py-3">
       <%= display_flash %>
       <%= yield %>
