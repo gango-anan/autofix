@@ -1,10 +1,14 @@
-<h2>All Groups</h2>
-<section class="container">
+<h4 class="text-center text-muted">All Groups</h4>
+<article class="container bg-white pb-2">
   <% @groups.each do |group| %>
-    <div>
-      <div>Icon</div>
-      <%= link_to "#{ group.name }", group_path(group.id) %>
-      <%= group.created_at.strftime("%d/%h/%Y") %>
+    <div class="py-4 my-3 border-bottom d-flex">
+      <div class="mx-2 w-25">
+        <%= image_tag "logo.png", class: "logo" %>
+      </div>
+      <div class="w-75 mb-2">
+        <div class="text-muted font-weight-bold"><%= link_to "#{ group.name }", group_path(group.id) %></div>
+        <div class="mb-3"><small><%= group.created_at.strftime("%d/%h/%Y") %></small></div>
+      </div>
     </div>
   <% end %>
-</section>
+</article>
