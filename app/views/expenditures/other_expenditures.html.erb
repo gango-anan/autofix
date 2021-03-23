@@ -4,7 +4,7 @@
     <p class="text-muted h6">Total amount</p>
     <div class="font-weight-bolder"><%= number_to_currency(@total_amount_other_expenditures) %></div>
   </article>
-  <div class="text-right my-2"><%= link_to "Add new expenditure", new_expenditure_path, class: 'btn btn-success' %></div>
+  <div class="text-right my-2"><%= link_to "Add new expenditure", new_expenditure_path, class: "btn btn-outline-success" %></div>
   <article>
     <% @other_expenditures.each do |expenditure| %>
       <div class="d-flex bg-white my-3 pt-2 border shadow">

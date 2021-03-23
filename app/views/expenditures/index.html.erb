@@ -1,11 +1,11 @@
 <section>
-  <h4 class="h3 text-center text-muted">ALL EXPENDITURES</h4>
+  <h4 class="text-center text-muted">ALL EXPENDITURES</h4>
   <article class="border bg-white d-flex justify-content-between p-2">
     <p class="text-muted h6">Total amount</p>
     <div class="font-weight-bolder"><%= number_to_currency(@total_amount) %></div>
   </article>
-  <div class="text-right my-2"><%= link_to "Add new expenditure", new_expenditure_path, class: 'btn btn-success' %></div>
-  <article>
+  <div class="text-right my-2"><%= link_to "Add new expenditure", new_expenditure_path, class: "btn btn-outline-success" %></div>
+  <article class="mt-3">
     <% @expenditures.each do |expenditure| %>
       <div class="d-flex bg-white pt-2">
         <div class="mx-2 w-25">
