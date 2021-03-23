@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
       render :new
     else
       @group.save
-      redirect_to user_path(Current.user.id), notice: 'Group Successfully added.'
+      redirect_to groups_path, notice: 'Group Successfully added.'
     end
   end
 
