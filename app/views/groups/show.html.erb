@@ -1,11 +1,12 @@
-<%= "#{ Current.user.username } #{ @group.name } Fix Expenditures."  %>
+<h4 class="text-center text-muted"><%= "#{ @group.name } expenditures.".capitalize  %></h4>
 <br>
 <% @group_expenditures.each do |expenditure| %>
-  <div>
-      <%= expenditure.name %> &nbsp;
-      <%= number_to_currency(expenditure.amount) %> <br/> 
+  <div class="border-bottom bg-white shadow p-3">
+      <span class="lead"><%= expenditure.name %></span> &nbsp;
+      <span class="font-weight-bold"><%= number_to_currency(expenditure.amount) %></span><br/> 
       <%= expenditure.created_at.strftime("%d/%h/%Y") %> <br/>
-      <%= "Author: #{ expenditure.author.username }" %>
+      <span class="text-muted">Author:</span>&nbsp;
+      <span class="font-weight-bold"><%="#{ expenditure.author.username }" %></span>
   </div>
   <br/>
 <% end %>
