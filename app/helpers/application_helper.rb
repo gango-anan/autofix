@@ -14,4 +14,12 @@ module ApplicationHelper
       render partial: 'shared/logged_out'
     end
   end
+
+  def display_icon(group)
+    if group.nil?
+      'default.png'
+    else
+    'transmission.jpeg'
+    end
+  end
 end

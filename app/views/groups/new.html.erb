@@ -4,6 +4,10 @@
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-control", placeholder: "Group name" %>
   </div>
+  <div class="mb-3 form-group">
+    <%= form.label :icon %>
+    <%= form.file_field :icon, class: "form-control" %>
+  </div>
   <div class="mb-3">
     <%=  form.submit "Create Group", class: "btn btn-success btn-block" %>
   </div>

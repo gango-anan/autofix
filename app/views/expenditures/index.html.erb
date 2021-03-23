@@ -9,7 +9,7 @@
     <% @expenditures.each do |expenditure| %>
       <div class="d-flex bg-white pt-2">
         <div class="mx-2 w-25">
-          <%= image_tag "logo.png", class: "logo" %>
+          <%= image_tag display_icon(expenditure.group), class: "logo" %>
         </div>
         <div class="border-bottom w-75 mb-2">
           <div class="text-muted font-weight-bold"><%= expenditure.name %></div>
