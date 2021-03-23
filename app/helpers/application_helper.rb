@@ -6,4 +6,12 @@ module ApplicationHelper
       render partial: 'shared/alerts'
     end
   end
+
+  def logged_in_or_visitor
+    if Current.user
+      render partial: 'shared/logged_in'
+    else
+      render partial: 'shared/logged_out'
+    end
+  end
 end
