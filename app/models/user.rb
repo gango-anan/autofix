@@ -23,13 +23,13 @@ class User < ApplicationRecord
   
   def create_default_groups
     Group.create(name: 'tyre-clinic', user_id: id, icon: 'tyre.png')
-    Group.create(name: 'service', user_id: id, icon: 'service.jpeg')
-    Group.create(name: 'body', user_id: id, icon: 'body.jpeg')
-    Group.create(name: 'engine', user_id: id, icon: 'engine.jpeg')
-    Group.create(name: 'diagnostics', user_id: id, icon: 'diagnosis.jpeg')
-    Group.create(name: 'electronics', user_id: id, icon: 'electronics.jpeg')
-    Group.create(name: 'brakes', user_id: id, icon: 'brakes.jpeg')
+    Group.create(name: 'service', user_id: id, icon: 'service.jpg')
+    Group.create(name: 'body', user_id: id, icon: 'body.jpg')
+    Group.create(name: 'engine', user_id: id, icon: 'engine.jpg')
+    Group.create(name: 'diagnostics', user_id: id, icon: 'diagnosis.jpg')
+    Group.create(name: 'electronics', user_id: id, icon: 'electronics.jpg')
+    Group.create(name: 'brakes', user_id: id, icon: 'brakes.jpg')
     Group.create(name: 'suspension', user_id: id, icon: 'suspension.png')
-    Group.create(name: 'transmission', user_id: id, icon: 'transmission.jpeg')
+    Group.create(name: 'transmission', user_id: id, icon: 'transmission.jpg')
   end
 end
