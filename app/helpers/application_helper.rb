@@ -18,8 +18,10 @@ module ApplicationHelper
   def display_icon(group)
     if group.nil?
       'default.png'
+    elsif group.picture.attached?
+      group.picture
     else
-      group.icon
+      group.icon 
     end
   end
 end
