@@ -11,15 +11,12 @@ class User < ApplicationRecord
   has_many :expenditures, class_name: 'Expenditure', foreign_key: 'author_id'
   has_many :groups, dependent: :destroy
 
-  # def total_amount
-  #   self.expenditures.map{ |expenditure| expenditure.amount }.inject(:+)
-  # end
   def total_amount
     self.expenditures.sum(:amount)
   end
 
   def total_amount_for_un_grouped_exps
-    self.expenditures.un_grouped_expenditures.map{ |expenditure| expenditure.amount }.inject(:+)
+    self.expenditures.un_grouped_expenditures.sum(:amount)
   end
 
   private
