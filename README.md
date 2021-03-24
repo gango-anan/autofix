@@ -50,7 +50,7 @@ Setup database with:
 ### Run tests
 Finally, run the test suite to verify that everything is working correctly with:
 ```
-    rpsec
+    rspec
 ```
 
 ### Usage
