@@ -8,12 +8,16 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
-    @group_expenditures = Current.user.expenditures.where(group_id: @group.id)
+    if !Current.user.groups.include?(Group.find(params[:id]))
+      flash[:alert] = "You are not authorized to view this group's expenditures."
+      redirect_to groups_path
+    else
+      @group = Current.user.groups.find(params[:id])
+      @group_expenditures = Current.user.expenditures.where(group_id: @group.id)
+    end
   end
 
   def create
-    group_params[:name].downcase!
     @group = Current.user.groups.build(group_params)
     if Current.user.groups.pluck(:name).include?(group_params[:name])
       flash[:alert] = 'Group already exists try another name.'

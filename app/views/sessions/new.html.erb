@@ -1,15 +1,17 @@
-<h4>Sign In</h4>
-<%= form_with(url: sign_in_path) do |form| %>
-  <div class="mb-3 form-group">
-    <%= form.label :username %>
-    <%= form.text_field :username, class: "form-control", placeholder: "Username" %>
-  </div>
-  <div class="mb-3 form-group">
-    <%= form.label :password %>
-    <%= form.password_field :password, class: "form-control", placeholder: "password" %>
-  </div>
-  <div class="mb-3">
-    <%=  form.submit "Sign In", class: "btn btn-success btn-block" %>
-  </div>
-  <small class="form-text text-muted">Or <%= link_to 'Sign Up', new_user_path %> if you don't have an account yet.</small>
-<% end %>
+<section class="container">
+  <h5 class="text-center">Sign In</h5>
+  <%= form_with(url: sign_in_path) do |form| %>
+    <div class="mb-3 form-group">
+      <%= form.label :username %>
+      <%= form.text_field :username, class: "form-control", placeholder: "Username" %>
+    </div>
+    <div class="mb-3 form-group">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+    </div>
+    <div class="mb-3">
+      <%=  form.submit "Sign In", class: "btn btn-success btn-block" %>
+    </div>
+    <small class="form-text text-muted">Or <%= link_to 'Sign Up', new_user_path %> if you don't have an account yet.</small>
+  <% end %>
+</section>
