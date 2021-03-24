@@ -7,7 +7,7 @@
         <%= image_tag display_icon(grp), class: "logo" %>
       </div>
       <div class="w-75 mb-2">
-        <div class="text-muted font-weight-bold"><%= link_to "#{ grp.name }", group_path(grp.id) %></div>
+        <div class="text-muted font-weight-bold"><%= link_to grp.name, group_path(grp.id) %></div>
         <div class="mb-3"><small><%= grp.created_at.strftime("%d/%h/%Y") %></small></div>
       </div>
     </div>
