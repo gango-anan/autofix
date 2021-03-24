@@ -5,7 +5,7 @@ class ExpendituresController < ApplicationController
     else
       @total_amount = Current.user.total_amount
     end
-
+    
     @expenditures = Current.user.expenditures
   end
 

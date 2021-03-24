@@ -19,7 +19,7 @@ module ApplicationHelper
     if group.nil?
       'default.png'
     else
-    'transmission.jpeg'
+      group.icon
     end
   end
 end
