@@ -1,14 +1,14 @@
 <h4 class="text-center text-muted">All Groups</h4>
 <div class="text-right my-3"><%= link_to "Add new group", new_group_path, class: "btn btn-outline-success" %></div>
 <article class="container bg-white pb-2">
-  <% @groups.each do |group| %>
+  <% @groups.each do |grp| %>
     <div class="py-4 my-3 border-bottom d-flex">
       <div class="mx-2 w-25">
-        <%= image_tag "logo.png", class: "logo" %>
+        <%= image_tag display_icon(grp), class: "logo" %>
       </div>
       <div class="w-75 mb-2">
-        <div class="text-muted font-weight-bold"><%= link_to "#{ group.name }", group_path(group.id) %></div>
-        <div class="mb-3"><small><%= group.created_at.strftime("%d/%h/%Y") %></small></div>
+        <div class="text-muted font-weight-bold"><%= link_to "#{ grp.name }", group_path(grp.id) %></div>
+        <div class="mb-3"><small><%= grp.created_at.strftime("%d/%h/%Y") %></small></div>
       </div>
     </div>
   <% end %>
