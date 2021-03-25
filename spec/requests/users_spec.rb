@@ -10,7 +10,9 @@ RSpec.describe 'Users', type: :request do
 
   describe 'POST /create ' do
     before do
-      post users_path, params: { 'user' => { username: 'first_user', password: 'password', password_confirmation: 'password' } }
+      post users_path, params: {
+        'user' => { username: 'first_user', password: 'password', password_confirmation: 'password' }
+      }
     end
 
     it 'returns http redirect' do
@@ -18,7 +20,9 @@ RSpec.describe 'Users', type: :request do
     end
 
     it "returns a response, 'You are successfully signed Up.'" do
-      post users_path, params: { 'user' => { username: 'first_user', password: 'password', password_confirmation: 'password' } }
+      post users_path, params: {
+        'user' => { username: 'first_user', password: 'password', password_confirmation: 'password' }
+      }
       expect(response.body).to include 'You are successfully signed Up.'
     end
   end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'validation tests' do
+  context 'presence tests' do
     let(:user) { build(:user) }
     it 'ensures username presence.' do
       user.username = nil
@@ -13,6 +13,14 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
     end
 
+    it 'saves successfully if password is between 6 - 25 character.' do
+      user.password = SecureRandom.hex(10).to_s
+      user.password_confirmation = user.password
+      expect(user.save).to eq true
+    end
+  end
+  context 'validation tests' do
+    let(:user) { build(:user) }
     it 'is only valid when all data is provided.' do
       expect(user).to be_valid
     end
@@ -42,12 +50,6 @@ RSpec.describe User, type: :model do
       user.password = SecureRandom.hex(13).to_s
       user.password_confirmation = user.password
       expect(user.save).to eq false
-    end
-
-    it 'saves successfully if password is between 6 - 25 character.' do
-      user.password = SecureRandom.hex(10).to_s
-      user.password_confirmation = user.password
-      expect(user.save).to eq true
     end
   end
 end
