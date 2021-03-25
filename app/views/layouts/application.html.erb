@@ -30,12 +30,12 @@
       </div>
       <%= render partial: "shared/nav-bar"%>
     </header>
-    <main class="container py-3">
+    <main class="container py-3 mb-5">
       <%= display_flash %>
       <%= yield %>
     </main>
-    <footer class="container-fluid">
-      <div class="row bg-secondary py-3">
+    <footer class="container-fluid fixed-bottom">
+      <div class="row bg-secondary">
         <div class="col d-flex justify-content-between bg-muted py-2">
           <ul class="d-flex justify-content-between align-items-center list-unstyled m-0">
             <li class="mx-2"><a href="https://twitter.com/gango_anan" class="text-decoration-none text-light"  ><ion-icon name="logo-twitter"></ion-icon></a></li>
