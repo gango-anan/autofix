@@ -1,6 +1,7 @@
 # AutoFix
 
-AutoFix is a RESTful mobile application created using Ruby on rails to aid with tracking expenses on auto mobile maintenance. This application allows  the user to classify the expenses in a group, based on the repair or maintenance that has been done. Below is a screenshot of the home page of a signed in user.
+AutoFix is a RESTful mobile application created using Ruby on rails to aid with tracking expenses on auto mobile maintenance. This application allows  the user to classify the expenses in a group, based on the repair or maintenance that has been done. The original concept was designed by Gregoire Vella on Behance.
+Below is a screenshot of the home page of a signed in user.
 
 ## Home page of a logged in user.
 
@@ -85,7 +86,7 @@ Feel free to check the [issues page](https://github.com/gango-anan/autofix/issue
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
+- Gregoire Vella (owner of the application concept).
 - Credit goes to TheOdinProject.
 - Rails guides.
 - Standup team.
