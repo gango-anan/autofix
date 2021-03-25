@@ -86,7 +86,7 @@ Feel free to check the [issues page](https://github.com/gango-anan/autofix/issue
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-- Gregoire Vella (owner of the application concept).
+- Gregoire Vella - owner of the application concept( you can find it here (https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 - Credit goes to TheOdinProject.
 - Rails guides.
 - Standup team.
