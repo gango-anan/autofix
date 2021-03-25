@@ -1,8 +1,7 @@
 class PasswordsController < ApplicationController
   before_action :user_logged_in!
 
-  def edit
-  end
+  def edit; end
 
   def update
     if Current.user.update(password_params)

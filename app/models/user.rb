@@ -12,15 +12,15 @@ class User < ApplicationRecord
   has_many :groups, dependent: :destroy
 
   def total_amount
-    self.expenditures.sum(:amount)
+    expenditures.sum(:amount)
   end
 
   def total_amount_for_un_grouped_exps
-    self.expenditures.un_grouped_expenditures.sum(:amount)
+    expenditures.un_grouped_expenditures.sum(:amount)
   end
 
   private
-  
+
   def create_default_groups
     Group.create(name: 'tyre-clinic', user_id: id, icon: 'tyre.png')
     Group.create(name: 'service', user_id: id, icon: 'service.jpg')

@@ -21,7 +21,7 @@ module ApplicationHelper
     elsif group.picture.attached?
       group.picture
     else
-      group.icon 
+      group.icon
     end
   end
 end
