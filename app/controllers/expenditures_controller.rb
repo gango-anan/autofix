@@ -18,6 +18,7 @@ class ExpendituresController < ApplicationController
     if @expenditure.save
       redirect_to expenditures_path, notice: 'Expenditure recorded.'
     else
+      flash[:arlert] = 'Expenditure was not added try again.'
       render :new
     end
   end
