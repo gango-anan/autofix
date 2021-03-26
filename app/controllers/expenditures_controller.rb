@@ -1,22 +1,12 @@
 class ExpendituresController < ApplicationController
   def index
-    @total_amount = if Current.user.expenditures.blank?
-                      0
-                    else
-                      Current.user.total_amount
-                    end
-
-    @expenditures = Current.user.expenditures
+    @total_amount = Current.user.total_amount
+    @expenditures = Expenditure.user_expenditures.includes(:group)
   end
 
   def other_expenditures
-    @total_amount_other_expenditures = if Current.user.expenditures.un_grouped_expenditures.blank?
-                                         0
-                                       else
-                                         Current.user.total_amount_for_un_grouped_exps
-                                       end
-
-    @other_expenditures = Current.user.expenditures.un_grouped_expenditures
+    @total_amount_other_expenditures = Current.user.total_amount_for_un_grouped_exps
+    @other_expenditures = Expenditure.where(author_id: Current.user.id, group_id: nil)
   end
 
   def new

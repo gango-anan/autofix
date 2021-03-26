@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Current.user.groups
+    @groups = Group.user_groups.includes(:picture_attachment)
   end
 
   def new
@@ -8,12 +8,12 @@ class GroupsController < ApplicationController
   end
 
   def show
-    if !Current.user.groups.include?(Group.find(params[:id]))
-      flash[:alert] = "You are not authorized to view this group's expenditures."
+    @group = Group.find_by(user_id: Current.user.id, id: params[:id])
+    if @group.nil?
+      flash[:alert] = "You are not authorized to view these expenditures."
       redirect_to groups_path
     else
-      @group = Current.user.groups.find(params[:id])
-      @group_expenditures = Current.user.expenditures.where(group_id: @group.id)
+      @group_expenditures = Expenditure.where(author_id: Current.user.id, group_id: @group.id)
     end
   end
 
