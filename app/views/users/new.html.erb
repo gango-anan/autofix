@@ -1,13 +1,7 @@
 <section class="container">
   <h4 class="text-center">Sign Up</h4>
   <%= form_with(model: @user) do |form| %>
-    <% if @user.errors.any? %>
-      <div class="alert alert-danger">
-        <% @user.errors.full_messages.each do |message| %>
-          <div><%= message %></div>
-        <% end %>
-      </div>
-    <% end %>
+    <%= display_form_errors(@user) %>
     <div class="mb-3 form-group">
       <%= form.label :username %>
       <%= form.text_field :username, class: "form-control", placeholder: "Username" %>

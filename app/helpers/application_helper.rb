@@ -24,4 +24,8 @@ module ApplicationHelper
       group.icon
     end
   end
+
+  def display_form_errors(referenced_object)
+    render partial: 'shared/form_errors', locals: { obj: referenced_object } if referenced_object.errors.any?
+  end
 end

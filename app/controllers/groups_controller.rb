@@ -19,12 +19,13 @@ class GroupsController < ApplicationController
 
   def create
     @group = Current.user.groups.build(group_params)
-    if Current.user.groups.pluck(:name).include?(group_params[:name])
+    if Current.user.user_group_names.include?(group_params[:name])
       flash[:alert] = 'Group already exists try another name.'
       render :new
-    else
-      @group.save
+    elsif @group.save
       redirect_to groups_path, notice: 'Group Successfully added.'
+    else
+      render :new
     end
   end
 

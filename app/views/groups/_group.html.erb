@@ -1,0 +1,9 @@
+<div class="py-4 my-3 border-bottom d-flex">
+  <div class="mx-2 w-25">
+    <%= image_tag display_icon(group), class: "logo" %>
+  </div>
+  <div class="w-75 mb-2">
+    <div class="text-muted font-weight-bold"><%= link_to group.name, group_path(group.id) %></div>
+    <div class="mb-3"><small><%= group.created_at.strftime("%d/%h/%Y") %></small></div>
+  </div>
+</div>

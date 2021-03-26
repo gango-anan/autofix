@@ -1,11 +1,5 @@
 <%= form_with(model: @expenditure) do |form| %>
-  <% if @expenditure.errors.any? %>
-    <div class="alert alert-danger">
-      <% @expenditure.errors.full_messages.each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
-  <% end %>
+  <%= display_form_errors(@expenditure) %>
   <div class="mb-3 form-group">
     <%= form.label :name, 'Name:' %>
     <%= form.text_field :name, class: "form-control", placeholder: "Expenditure name" %>

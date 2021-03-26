@@ -21,6 +21,10 @@ class User < ApplicationRecord
     expenditures.un_grouped_expenditures.sum(:amount)
   end
 
+  def user_group_names
+    self.groups.pluck(:name)
+  end
+  
   private
 
   def create_default_groups
