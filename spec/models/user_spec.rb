@@ -1,8 +1,8 @@
 require 'rails_helper'
-
 RSpec.describe User, type: :model do
   context 'presence tests' do
     let(:user) { build(:user) }
+
     it 'ensures username presence.' do
       user.username = nil
       expect(user).not_to be_valid
@@ -19,8 +19,10 @@ RSpec.describe User, type: :model do
       expect(user.save).to eq true
     end
   end
+
   context 'validation tests' do
     let(:user) { build(:user) }
+
     it 'is only valid when all data is provided.' do
       expect(user).to be_valid
     end
