@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.user_groups.includes(:picture_attachment)
+    @groups = Group.includes(:picture_attachment).user_groups
   end
 
   def new
