@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
   context 'validation tests' do
     let(:user) { build(:user) }
 
-    it 'is only valid when all data is provided.' do
+    it 'is only valid if all data is provided.' do
       expect(user).to be_valid
     end
 
@@ -42,16 +42,22 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid
     end
 
-    it 'ensures the password is not less than 6 character.' do
+    it 'ensures the password is not less than 6 characters.' do
       user.password = SecureRandom.hex(1).to_s
       user.password_confirmation = user.password
       expect(user.save).to eq false
     end
 
-    it 'ensures the password is not more than 25 character.' do
+    it 'ensures the password is not more than 25 characters.' do
       user.password = SecureRandom.hex(13).to_s
       user.password_confirmation = user.password
       expect(user.save).to eq false
+    end
+
+    it 'is not valid if password and password confirmation do not match.' do
+      user.password = SecureRandom.hex(5).to_s
+      user.password_confirmation = SecureRandom.hex(10).to_s
+      expect(user).not_to be_valid
     end
   end
 end
