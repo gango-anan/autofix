@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def display_icon(group)
-    if group.nil? || group.icon.nil?
+    if group.nil? || group.icon.nil? && !group.picture.attached?
       'default.png'
     elsif group.picture.attached?
       group.picture
