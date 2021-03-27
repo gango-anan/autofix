@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Group", type: :feature do
+RSpec.describe 'Group', type: :feature do
   describe 'adding a new group' do
     before do
       User.create(username: 'Username', password: 'password', password_confirmation: 'password')
@@ -11,8 +11,8 @@ RSpec.describe "Group", type: :feature do
     end
 
     scenario 'signed in user can create a new group.' do
-      click_link("All groups")
-      click_link("Create new group")
+      click_link('All groups')
+      click_link('Create new group')
       fill_in 'group_name', with: 'sample'
       click_button 'Create Group'
       expect(page).to have_content 'Group Successfully added.'

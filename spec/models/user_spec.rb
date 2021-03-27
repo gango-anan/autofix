@@ -53,11 +53,5 @@ RSpec.describe User, type: :model do
       user.password_confirmation = user.password
       expect(user.save).to eq false
     end
-
-    it 'is not valid if password and password confirmation do not match.' do
-      user.password = SecureRandom.hex(5).to_s
-      user.password_confirmation = SecureRandom.hex(10).to_s
-      expect(user).not_to be_valid
-    end
   end
 end

@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find_by(user_id: Current.user.id, id: params[:id])
     if @group.nil?
-      flash[:alert] = "You are not authorized to view these expenditures."
+      flash[:alert] = 'You are not authorized to view these expenditures.'
       redirect_to groups_path
     else
       @group_expenditures = Expenditure.where(author_id: Current.user.id, group_id: @group.id)

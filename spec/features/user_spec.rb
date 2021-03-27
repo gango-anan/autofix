@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "User", type: :feature do
+RSpec.describe 'User', type: :feature do
   describe 'signin process' do
     before(:all) do
       User.create(username: 'Username', password: 'password', password_confirmation: 'password')
