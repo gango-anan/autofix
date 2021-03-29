@@ -1,0 +1,18 @@
+<%= form_with(model: @expenditure) do |form| %>
+  <%= display_form_errors(@expenditure) %>
+  <div class="mb-3 form-group">
+    <%= form.label :name, 'Name:' %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Expenditure name" %>
+  </div>
+  <div class="mb-3 form-group">
+    <%= form.label :amount, 'Amount:' %>
+    <%= form.number_field :amount, step: 0.01, class: "form-control", placeholder: "Amount spent" %>
+  </div>
+  <div class="mb-3 form-group">
+    <%= form.label :group, 'Select group:' %>
+    <%= form.collection_select :group_id, @groups, :id, :name, { :include_blank => 'None' }, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%=  form.submit "Add Expenditure", class: "btn btn-success btn-block" %>
+  </div>
+<% end %>
