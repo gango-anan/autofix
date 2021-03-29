@@ -94,4 +94,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://github.com/gango-anan/autofix/blob/features/LICENSE) licensed.
+This project is [MIT](https://github.com/gango-anan/autofix/blob/master/LICENSE) licensed.
