@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Autofix</title>
+    <title>Auto Mobile Fix</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-light">
+    <header class="bg-color">
+      <div class="text-right pt-1 pr-3 text-white d-md-none ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-battery-half" viewBox="0 0 16 16">
+          <path d="M2 6h5v4H2V6z"/>
+          <path d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+        </svg>
+        &nbsp;
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-reception-4" viewBox="0 0 16 16">
+          <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z"/>
+        </svg>
+      </div>
+      <%= render partial: "shared/nav-bar"%>
+    </header>
+    <main class="container py-3 mb-5">
+      <%= display_flash %>
+      <%= yield %>
+    </main>
+    <footer class="container-fluid fixed-bottom">
+      <div class="row bg-secondary">
+        <div class="col d-flex justify-content-between bg-muted py-2">
+          <ul class="d-flex justify-content-between align-items-center list-unstyled m-0">
+            <li class="mx-2"><a href="https://twitter.com/gango_anan" class="text-decoration-none text-light"  ><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li class="mx-2"><a href="https://www.linkedin.com/in/galiwango-ananiya-0800821b4/" class="text-decoration-none text-light"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li class="mx-2"><a href="https://github.com/gango-anan" class="text-decoration-none text-light"><ion-icon name="logo-github"></ion-icon></a></li>
+          </ul>
+          <p class="text-white small m-0">Powered by <i><strong><a href="https://github.com/gango-anan" class="text-decoration-none text-white">galisoft</a></strong></i></p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

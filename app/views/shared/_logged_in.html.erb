@@ -1,0 +1,18 @@
+<li class="nav-item">
+  <%= link_to "Expenditures", expenditures_path, class: "nav-link text-light" %>
+</li>
+<li class="nav-item">
+  <%= link_to "External expenditures", external_expenditures_path, class: "nav-link text-light" %>
+</li>
+<li class="nav-item">
+  <%= link_to "Groups", groups_path, class: "nav-link text-light" %>
+</li>
+<li class="nav-item">
+  <%= link_to Current.user.username.upcase, root_path, class: "nav-link text-light" %>
+</li>
+<li class="nav-item">
+  <%= link_to "Edit Password", password_path, class: "nav-link text-light" %>
+</li>
+<li class="nav-item">
+  <%= button_to 'Sign Out', logout_path, method: :delete, class: "btn btn-outline text-danger font-weight-bold nav-link active" %>
+</li>

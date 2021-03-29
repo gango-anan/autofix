@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-color">
+  <%= link_to image_tag("autofix_logo.png", class: "logo"), root_path %>
+  <%= link_to "AutoFix", root_path, class: "navbar-brand text-light h4" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <%= logged_in_or_visitor %>
+    </ul>
+  </div>
+</nav>
