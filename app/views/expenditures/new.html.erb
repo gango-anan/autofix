@@ -10,7 +10,7 @@
   </div>
   <div class="mb-3 form-group">
     <%= form.label :group, 'Select group:' %>
-    <%= form.collection_select :group_id, Current.user.groups, :id, :name, { :include_blank => 'None' }, class: "form-control" %>
+    <%= form.collection_select :group_id, @groups, :id, :name, { :include_blank => 'None' }, class: "form-control" %>
   </div>
   <div class="mb-3">
     <%=  form.submit "Add Expenditure", class: "btn btn-success btn-block" %>

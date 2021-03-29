@@ -11,6 +11,7 @@ class ExpendituresController < ApplicationController
 
   def new
     @expenditure = Current.user.expenditures.build
+    @groups = Group.where(user_id: [Current.user.id, nil])
   end
 
   def create
